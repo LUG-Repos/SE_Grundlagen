@@ -73,3 +73,38 @@ if(true != false)//Diese Bedingung wird überprüft, da es sich um eine separate
 //Der User soll ein Passwort eingeben. Er hat drei Versuche um das Passwort richtig einzugeben.
 //Nach jedem Fehlversuch, soll angegeben werden wieviele Versuche übrig bleiben.
 //Nach dem dritten Fehlversuch soll die Meldung kommen: "Konto gesperrt."
+
+var password = "1234";
+int versuche = 3;
+
+Console.WriteLine("Bitte gib dein Passwort ein: ");
+if (password == Console.ReadLine())
+{
+    Console.WriteLine("Zugang gewährt");
+}
+else
+{
+    versuche--;
+    Console.WriteLine("Passwort falsch du hast noch " + versuche + " Versuche" );
+    Console.WriteLine("Bitte gib dein Passwort ein: ");
+    if (password == Console.ReadLine())
+    {
+        Console.WriteLine("Zugang gewährt");
+    }
+    else
+    {
+        versuche--;
+        Console.WriteLine("Passwort falsch du hast noch " + versuche + " Versuch");
+        Console.WriteLine("Bitte gib dein Passwort ein: ");
+        if (password == Console.ReadLine())
+        {
+            Console.WriteLine("Zugang gewährt");
+        }
+        else
+        {
+            versuche--;
+            Console.WriteLine("Passwort falsch du hast noch " + versuche + " Versuche");
+            Console.WriteLine("Konto gespeert!");
+        }
+    }
+}
